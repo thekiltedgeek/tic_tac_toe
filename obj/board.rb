@@ -2,6 +2,7 @@
 #class for the game board
 
 class Board
+    attr_reader :board
     def initialize
         initializeBoard
     end
@@ -10,10 +11,16 @@ class Board
         return @board[index]
     end
     
+    def printRow(index)
+        rowstring = ''
+        self.row(index).each {|cel| rowstring << "#{cel} "}
+        return rowstring
+    end
+    
     def column(index)
         cols = []
         (0..2).each do |i|
-            cols << @board[i][index]
+            cols << self[i][index]
         end
         
         return cols
@@ -29,7 +36,8 @@ class Board
         return @board[col][row] == '-'
     end
     
-    def win?
+    def win? (col, row, mark)
+        return @board.row(row).all? {|cel| cel == mark} || @board.column(col).all?  {|cel| cel == mark}
     end
     
     def initializeBoard

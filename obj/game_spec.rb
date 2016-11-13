@@ -29,6 +29,5 @@ describe "Game class" do
         expect(myGame.board).to be_an_instance_of(Board)
     end
     
-    it "should have a method called 'start'"
     it "should have a property called 'game_over' which returns winning Player object or 'None'"
 end

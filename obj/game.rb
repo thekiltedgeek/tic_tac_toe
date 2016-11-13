@@ -11,4 +11,16 @@ class Game
         @board = Board.new
         @turn = 0
     end
+    
+    def play
+        displayBoard
+    end
+    
+    def displayBoard
+        puts @board.printRow(0)
+        puts "-+-+-"
+        puts @board.printRow(1)
+        puts "-+-+-"
+        puts @board.printRow(2)
+    end
 end
