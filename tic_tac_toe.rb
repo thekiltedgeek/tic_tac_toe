@@ -10,7 +10,7 @@ myGame = Game.new
 names = []
 until names.count == 2
     default_name = "Player " + (names.count + 1).to_s
-    names.count == 0 ? side = 'X' : side ='Y'
+    names.count == 0 ? side = 'X' : side ='O'
     print "What is #{default_name}'s name? (Enter for '#{default_name}'): "
     name = gets.chomp
     name = default_name if name.length == 0

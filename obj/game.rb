@@ -13,14 +13,29 @@ class Game
     end
     
     def play
-        displayBoard
+        until @turn == 10
+            displayBoard
+            getMove
+        end
+    end
+    
+    def getMove
+        valid = nil
+        current_player = @players[@turn % 2]
+        until valid != nil
+            print "#{current_player.name}'s turn (row,col): "
+            response = gets.chomp
+            valid = @board.move(response[0].to_i,response[-1].to_i,"#{current_player.side}")
+            puts "Invalid move, #{current_player.name}" if valid == nil
+        end
+        @turn += 1
     end
     
     def displayBoard
-        puts @board.printRow(0)
-        puts "-+-+-"
-        puts @board.printRow(1)
-        puts "-+-+-"
-        puts @board.printRow(2)
+        puts ''
+        puts "  1 2 3"
+        puts "1 " + @board.printRow(0)
+        puts "2 " + @board.printRow(1)
+        puts "3 " + @board.printRow(2)
     end
 end

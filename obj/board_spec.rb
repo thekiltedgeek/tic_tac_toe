@@ -14,11 +14,11 @@ describe "Board class" do
     end
     #We make a move first to set up next test
     it "should update board with legal move" do
-        expect(myBoard.move(2,1,'X')).to eq('X')
+        expect(myBoard.move(1,2,'X')).to eq('X')
     end
     #Now we try moving to same cell
     it "should return nil if intended move is not legal" do
-        expect(myBoard.move(2,1,'Y')).to eq(nil)
+        expect(myBoard.move(1,2,'O')).to eq(nil)
     end
     it "should indicate if last legal move results in a win"
     it "should indicate a draw if board is full and neither player has won"
