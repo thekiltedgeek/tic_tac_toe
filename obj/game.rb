@@ -14,7 +14,7 @@ class Game
     
     def play
         until @turn == 10
-            displayBoard
+            @board.display
             getMove
         end
     end
@@ -31,11 +31,5 @@ class Game
         @turn += 1
     end
     
-    def displayBoard
-        puts ''
-        puts "  1 2 3"
-        puts "1 " + @board.printRow(0)
-        puts "2 " + @board.printRow(1)
-        puts "3 " + @board.printRow(2)
-    end
+    
 end

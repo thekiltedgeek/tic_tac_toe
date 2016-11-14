@@ -26,6 +26,14 @@ class Board
         return cols
     end
     
+    def display
+        puts ''
+        puts "  1 2 3"
+        puts "1 " + printRow(0)
+        puts "2 " + printRow(1)
+        puts "3 " + printRow(2)
+    end
+    
     def move(row,col,mark)
         @board[row - 1][col - 1] = mark if is_legal?(row - 1,col - 1)
     end
