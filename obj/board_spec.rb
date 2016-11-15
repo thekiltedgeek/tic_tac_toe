@@ -20,6 +20,4 @@ describe "Board class" do
     it "should return nil if intended move is not legal" do
         expect(myBoard.move(1,2,'O')).to eq(nil)
     end
-    it "should indicate if last legal move results in a win"
-    it "should indicate a draw if board is full and neither player has won"
 end

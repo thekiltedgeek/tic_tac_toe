@@ -28,6 +28,4 @@ describe "Game class" do
     it "should have an object called board of class Board" do
         expect(myGame.board).to be_an_instance_of(Board)
     end
-    
-    it "should have a property called 'game_over' which returns winning Player object or 'None'"
 end
