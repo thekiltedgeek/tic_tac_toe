@@ -17,9 +17,9 @@ class Game
         begin
             display
             getMove
-        end until @turn == 10 || (@board.win?(@current_player.symbol))
+        end until @turn == 9 || (@board.win?(@current_player.symbol))
         
-        if @turn == 10
+        if @turn == 9
             gameOver('draw')
             else
             gameOver(@current_player.name)
