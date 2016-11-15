@@ -14,12 +14,12 @@ class Board
         return rowstring
     end
     
-    def move(row,col,mark)
-        @grid[row - 1][col - 1] = mark if is_legal?(row - 1,col - 1)
+    def move(row,col,symbol)
+        @grid[row - 1][col - 1] = symbol if is_legal?(row - 1,col - 1)
     end
     
-    def win? (mark)
-        return @grid.any? {|r| r.all? {|cel| cel == mark}} || self.columns.any? {|c| c.all? {|cel| cel == mark}} ||            [@grid[0][0],@grid[1][1],@grid[2][2]].all? {|cel| cel == mark} || [@grid[2][0],@grid[1][1],@grid[2][0]].all? {|cel| cel == mark}
+    def win? (symbol)
+        return @grid.any? {|r| r.all? {|cel| cel == symbol}} || self.columns.any? {|c| c.all? {|cel| cel == symbol}} ||            [@grid[0][0],@grid[1][1],@grid[2][2]].all? {|cel| cel == symbol} || [@grid[2][0],@grid[1][1],@grid[2][0]].all? {|cel| cel == symbol}
     end
     
     def columns

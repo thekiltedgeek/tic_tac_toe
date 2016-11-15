@@ -2,9 +2,9 @@
 #class for player objects
 
 class Player
-    attr_reader :name, :side
-    def initialize(name, side)
+    attr_reader :name, :symbol
+    def initialize(name, symbol)
         @name = name
-        @side = side
+        @symbol = symbol
     end
 end

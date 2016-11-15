@@ -5,10 +5,6 @@ require_relative 'board'
 
 describe "Board class" do
     myBoard = Board.new
-    it "should have a 3x3 Array to represent the state of the board"
-    it "should return a single row as an Array" do
-        expect(myBoard.row(1)).to be_instance_of(Array)
-    end
     it "should return a single column as an Array" do
         expect(myBoard.column(1)).to be_instance_of(Array)
     end

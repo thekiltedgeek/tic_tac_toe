@@ -8,6 +8,6 @@ describe "Player class" do
         expect(player1.name).to eq("Me")
     end
     it "should record whether player is X or O" do
-        expect(player1.side).to eq("X")
+        expect(player1.symbol).to eq("X")
     end
 end

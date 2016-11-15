@@ -17,7 +17,7 @@ class Game
         begin
             display
             getMove
-        end until @turn == 10 || (@board.win?(@current_player.side))
+        end until @turn == 10 || (@board.win?(@current_player.symbol))
         
         if @turn == 10
             gameOver('draw')
@@ -40,7 +40,7 @@ class Game
         until valid != nil
             print "#{@current_player.name}'s turn (row,col): "
             response = gets.chomp
-            valid = @board.move(response[0].to_i,response[-1].to_i,"#{@current_player.side}")
+            valid = @board.move(response[0].to_i,response[-1].to_i,"#{@current_player.symbol}")
             puts "Invalid move, #{@current_player.name}" if valid == nil
         end
         @turn += 1
